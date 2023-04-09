@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 @Service
 public class PlaylistServiceImpl implements PlaylistService {
 
@@ -27,6 +29,7 @@ public class PlaylistServiceImpl implements PlaylistService {
 
     @Override
     public Mono<Playlist> createPlaylist(Playlist playlist) {
+        playlist.setId(UUID.randomUUID().toString());
         return playlistRepository.save(playlist);
     }
 

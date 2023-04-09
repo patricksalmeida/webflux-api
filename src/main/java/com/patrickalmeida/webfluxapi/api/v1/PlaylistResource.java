@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.Objects;
 import java.util.UUID;
 
-@RestController
-@RequestMapping("/api/v1/playlists")
+//@RestController
+//@RequestMapping("/api/v1/playlists")
 public class PlaylistResource {
 
     private final PlaylistService playlistService;
@@ -31,7 +30,6 @@ public class PlaylistResource {
 
     @PostMapping()
     public Mono<Playlist> createPlaylist(@RequestBody Playlist playlist) {
-        playlist.setId(UUID.randomUUID().toString());
         return playlistService.createPlaylist(playlist);
     }
 
