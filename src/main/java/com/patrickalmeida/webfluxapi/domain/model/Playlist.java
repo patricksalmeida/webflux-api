@@ -11,9 +11,10 @@ public class Playlist {
 
     private String name;
 
-    public Playlist(String id, String playlistName) {
+
+    public Playlist(String id, String name) {
         this.id = id;
-        this.name = playlistName;
+        this.name = name;
     }
 
     public String getId() {
