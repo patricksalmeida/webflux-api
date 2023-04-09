@@ -11,10 +11,12 @@ public class Playlist {
 
     private String name;
 
+    private int order;
 
-    public Playlist(String id, String name) {
+    public Playlist(String id, String name, int order) {
         this.id = id;
         this.name = name;
+        this.order = order;
     }
 
     public String getId() {
@@ -33,11 +35,20 @@ public class Playlist {
         this.name = name;
     }
 
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
+    }
+
     @Override
     public String toString() {
         return "Playlist{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
+                ", order=" + order +
                 '}';
     }
 }

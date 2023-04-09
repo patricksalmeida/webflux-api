@@ -4,11 +4,13 @@ import com.patrickalmeida.webfluxapi.domain.repository.PlaylistRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import reactor.core.publisher.Mono;
 
 @SpringBootApplication
 @EnableMongoRepositories
+@EnableFeignClients
 public class WebfluxApiApplication {
 
 	private final PlaylistRepository playlistRepository;
